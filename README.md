@@ -21,7 +21,7 @@ require("ggrepel")
 ### Create plots
 **Idiopathic RBD:**
 ```R
-tiff('iRBD_GWAS_beta-beta_tricolor.tiff', units="in", width=6, height=5, res=300, compression = 'lzw')
+png('iRBD_GWAS_beta-beta_tricolor.png', units="in", width=6, height=5, res=300, compression = 'lzw')
 
 irbd <- ggplot(data, aes(x=Beta_Meta5, y=meta5_beta_adjusted_iRBD)) + geom_vline(xintercept = 0, colour = "grey") + 
   geom_hline(yintercept = 0, colour = "grey") +
