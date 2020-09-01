@@ -102,4 +102,4 @@ dlb5 + theme(plot.title = element_text(hjust = 0.5))
 
 dev.off()
 ```
-![DLB beta-beta](DLB_GWAS_beta-beta.png)
+
