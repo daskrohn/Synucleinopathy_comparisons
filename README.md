@@ -131,4 +131,6 @@ ad5 <- ad4 + ggtitle("Beta-Beta Plot: PD vs AD") +
 ad5 + theme(legend.position = "none") + theme(plot.title = element_text(hjust = 0.5)) 
 
 dev.off()
+`````
 
+![AD_beta_beta](AD_GWAS_beta-beta_tricolor.png)
