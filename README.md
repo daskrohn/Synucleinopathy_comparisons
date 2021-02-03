@@ -73,7 +73,7 @@ pdwrbd5 + theme(plot.title = element_text(hjust = 0.5))
 
 dev.off()
 ````
-![PDwRBD beta-beta](23andMe_GWAS_beta-beta_noLRRK2_tricolor.png)
+![PDwRBD beta-beta](23andMe_PDwRBD_GWAS_beta-beta_tricolor.png)
 
 **LBD:**
 ```R
@@ -101,6 +101,6 @@ dlb5 + theme(plot.title = element_text(hjust = 0.5))
 
 dev.off()
 ```
-![DLB beta-beta](DLB2_GWAS_beta-beta.png)
+![DLB beta-beta](LBD_beta-beta.png)
 
 
