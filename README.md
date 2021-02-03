@@ -101,6 +101,6 @@ dlb5 + theme(plot.title = element_text(hjust = 0.5))
 
 dev.off()
 ```
-![DLB beta-beta](LBD_beta-beta.png)
+![DLB beta-beta](LBD_beta-beta.jpg)
 
 
