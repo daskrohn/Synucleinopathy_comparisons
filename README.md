@@ -1,7 +1,6 @@
 # Synucleinopathy_comparisons
-Heatmap for later: https://jcoliver.github.io/learn-r/006-heatmaps.html
 
-PD is the most genetically understood of the synucleinopathies (PD, DLB, MSA, RBD) because of the large sample sizes available for GWAS. For this reason, I've compared the results for the PD top GWAS hits in both RBD (current) and DLB (Scholz et. al.) GWAS.  
+PD is the most genetically understood of the synucleinopathies (PD, DLB, MSA, RBD) because of the large sample sizes available for GWAS. For this reason, I've compared the results for the PD top GWAS hits (Nalls et. al. 2019) in both RBD (current) and LBD (Chia et. al. 2021) GWAS.  
 
 ## Beta-Beta Plot
 
@@ -76,7 +75,7 @@ dev.off()
 ````
 ![PDwRBD beta-beta](23andMe_GWAS_beta-beta_noLRRK2_tricolor.png)
 
-**DLB:**
+**LBD:**
 ```R
 png('DLB_GWAS_beta-beta.png', units="in", width=6, height=5, res=300)
 
@@ -104,33 +103,4 @@ dev.off()
 ```
 ![DLB beta-beta](DLB2_GWAS_beta-beta.png)
 
-**AD:**
-```R
-data = read.csv("AD_PD_comparison_workbook.csv")
 
-png('AD_GWAS_beta-beta_tricolor.png', units="in", width=6, height=5, res=300)
-
-ad <- ggplot(data, aes(x=Beta_Meta5, y=beta_adjusted_AD)) + geom_vline(xintercept = 0, colour = "grey") + 
-  geom_hline(yintercept = 0, colour = "grey") +
-  geom_point(shape = 16, size = 4, aes(color = direction_AD), alpha=0.7) + 
-  xlim(-0.8, 0.8) 
-
-ad2 <- ad + scale_color_manual(values = c("red2", "blue", "grey65"))
-
-ad3 <- ad2 + geom_vline(xintercept = 0, colour = "grey") + geom_hline(yintercept = 0, colour = "grey") + theme_light()
-
-ad4 <- ad3 +
-  geom_label_repel(aes(label = gene),
-                   box.padding   = 0.35, 
-                   point.padding = 0.5,
-                   segment.color = 'grey50') 
-
-ad5 <- ad4 + ggtitle("Beta-Beta Plot: PD vs AD") +
-  xlab("PD Betas (Nalls et. al. 2019)") + ylab("AD Betas (Jansen et. al. 2019)") + theme(plot.title = element_text(face="bold"))
-
-ad5 + theme(legend.position = "none") + theme(plot.title = element_text(hjust = 0.5)) 
-
-dev.off()
-`````
-
-![AD_beta_beta](AD_GWAS_beta-beta_tricolor.png)
